@@ -1,0 +1,39 @@
+# Chrome Extension
+*.crx
+*.pem
+
+# Logs
+*.log
+.cursor/
+debug.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test files
+test-results/
+coverage/
+
+# Scraped data (example files)
+*.csv
+!test/*.csv
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if any)
+node_modules/
+
+# Build files
+dist/
+build/
+

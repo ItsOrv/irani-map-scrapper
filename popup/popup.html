@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اسکرپر بلد و نشان</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>اسکرپر بلد و نشان</h1>
+    </header>
+
+    <div class="section">
+      <label for="location">شهر یا استان:</label>
+      <input type="text" id="location" placeholder="مثال: تهران، اصفهان" />
+    </div>
+
+    <div class="section">
+      <label>
+        <input type="checkbox" id="scrapeDetails" checked />
+        استخراج اطلاعات کامل (تلفن و ایمیل از صفحه جزئیات)
+      </label>
+      <small style="display: block; margin-top: 5px; color: #666; font-size: 12px;">
+        توجه: این گزینه باعث می‌شود اسکرپینگ کندتر شود اما اطلاعات کامل‌تری استخراج می‌کند
+      </small>
+    </div>
+
+    <div class="section">
+      <h3>فیلترها</h3>
+      
+      <div class="filter-group">
+        <label for="businessName">نام کسب‌وکار (جستجوی متنی):</label>
+        <input type="text" id="businessName" placeholder="مثال: رستوران" />
+      </div>
+
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" id="hasEmail" />
+          فقط کسب‌وکارهایی که ایمیل دارند
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <label>
+          <input type="checkbox" id="hasWebsite" />
+          فقط کسب‌وکارهایی که وب‌سایت دارند
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <label for="category">دسته‌بندی:</label>
+        <input type="text" id="category" placeholder="مثال: رستوران، کافی‌شاپ" />
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="progress-section" id="progressSection" style="display: none;">
+        <div class="progress-info">
+          <span id="progressText">در حال اسکرپینگ...</span>
+          <span id="progressCount">0</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button id="startBtn" class="btn btn-primary">شروع اسکرپینگ</button>
+      <button id="stopBtn" class="btn btn-secondary" style="display: none;">توقف</button>
+      <button id="downloadBtn" class="btn btn-success" style="display: none;">دانلود CSV</button>
+    </div>
+
+    <div class="status-message" id="statusMessage"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

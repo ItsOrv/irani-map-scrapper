@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای Load کردن افزونه</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-right: 4px solid #667eea;
+        }
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        .path {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 راهنمای Load کردن افزونه در Chrome</h1>
+        
+        <div class="success">
+            <strong>✅ افزونه آماده است!</strong><br>
+            همه فایل‌های ضروری موجود هستند و افزونه آماده load کردن است.
+        </div>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>باز کردن صفحه Extensions</strong>
+            <p>روی دکمه زیر کلیک کنید یا به صورت دستی به آدرس زیر بروید:</p>
+            <a href="chrome://extensions/" class="button">باز کردن Extensions</a>
+            <div class="path">chrome://extensions/</div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>فعال کردن Developer Mode</strong>
+            <p>در گوشه بالا-راست صفحه، کلید "Developer mode" را فعال کنید.</p>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Load کردن افزونه</strong>
+            <p>روی دکمه <strong>"Load unpacked"</strong> کلیک کنید و پوشه زیر را انتخاب کنید:</p>
+            <div class="path" id="projectPath"></div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>تست افزونه</strong>
+            <ol>
+                <li>به سایت <a href="https://balad.ir" target="_blank">balad.ir</a> بروید</li>
+                <li>یک جستجو انجام دهید</li>
+                <li>روی آیکون افزونه کلیک کنید</li>
+                <li>شروع به اسکرپینگ کنید!</li>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <strong>⚠ نکته مهم:</strong><br>
+            Selectorهای CSS در <code>content/content.js</code> ممکن است نیاز به تنظیم داشته باشند. 
+            پس از load کردن، ساختار DOM سایت balad.ir را بررسی کنید و selectorها را به‌روزرسانی کنید.
+        </div>
+
+        <div class="warning">
+            <strong>📝 آیکون‌ها:</strong><br>
+            آیکون‌های افزونه موجود نیستند (اختیاری). می‌توانید از فایل <code>create-icons.html</code> برای ایجاد آن‌ها استفاده کنید.
+        </div>
+    </div>
+
+    <script>
+        // نمایش مسیر پروژه
+        const path = window.location.pathname.split('/').slice(0, -1).join('/') || '/home/orv/Documents/irani-map-scrapper';
+        document.getElementById('projectPath').textContent = path || 'مسیر پروژه';
+    </script>
+</body>
+</html>
+
